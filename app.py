@@ -1,5 +1,8 @@
+import os
 import requests
-response=requests.get("https://api.github.com")
-print("status:",response.status_code)
-print("headers:",response.headers["content-type"])
 
+url = os.getenv("API_URL", "https://api.github.com")
+
+response = requests.get(url)
+
+print("Status:", response.status_code)
